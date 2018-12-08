@@ -1,0 +1,93 @@
+#include<iostream>
+#include<vector>
+
+using namespace std;
+
+int main()
+{
+	vector<int> a(10,10);
+	vector<double> b(9,9.9);
+	vector<char> c(8,98);
+	
+	int i = 2;
+	cout<<"a的第二个元素："<<a.at(i)<<endl;
+	cout<<"b的第二个元素："<<b.at(i)<<endl;
+	cout<<"c的第二个元素："<<c.at(i)<<endl;
+	cout<<endl;
+	
+	cout<<"a数组的长度："<<a.size()<<endl;
+	cout<<"b数组的长度："<<b.size()<<endl;
+	cout<<"c数组的长度："<<c.size()<<endl;
+	cout<<endl;
+	
+	cout<<"a数组的第一个元素："<<a.front()<<endl;
+	
+	cout<<"b数组的最后一个元素："<<b.back()<<endl;
+	cout<<endl;
+	
+	//清空数组
+	a.clear();
+	cout<<"清空a数组后，取a最后一个元素："<<a.back()<<endl; 
+	cout<<endl;
+	
+	//下标
+	a.begin();//a数组第一个元素的下标    
+	a.end();//a数组最后一个元素的下标
+	cout<<endl;
+	
+	//交换数组a，d及其中的元素 
+	vector<int> d(7,7);
+	swap(a,d);
+	cout<<"交换a，b数组：" <<endl;
+	cout<<"交换后数组a元素个数："<<a.size()<<endl;
+	cout<<"交换后数组d元素个数："<<d.size()<<endl;
+	cout<<endl;
+	
+	//判断数组a是否为空 
+	if(a.empty())
+	cout<<"a数组为空"<<endl;
+	else
+	cout<<"a数组不为空"<<endl;
+	cout<<endl;
+	
+	//返回可容纳的最大元素数
+	cout<<"b数组可容纳的最大元素数为："<<b.max_size()<<endl;
+	cout<<"c数组可容纳的最大元素数为："<<c.max_size()<<endl; 
+	cout<<endl;
+	
+	//返回当前储存空间可容纳的元素数
+	cout<<"a数组当前可容纳的最大元素数为：" <<a.capacity()<<endl;
+	cout<<"b数组当前可容纳的最大元素数为：" <<b.capacity()<<endl;
+	cout<<"c数组当前可容纳的最大元素数为：" <<c.capacity()<<endl;
+	cout<<endl;
+	
+	//插入数组
+	vector<int> v(3);      
+	v[0]=2;     
+	v[1]=7;      
+	v[2]=9;      
+	//在最前面插入新元素。
+	v.insert(v.begin(),8);      
+	//在迭代器中第二个元素前插入新元素
+	v.insert(v.begin()+2,1);      
+	//在向量末尾追加新元素。
+	v.insert(v.end(),3);   	
+	//在尾部插入4个1
+	v.insert(v.end(),4,1);
+	//打印数组v
+	for(int j=0;j<10;j++)
+	cout<<v[j]<<" ";
+	cout<<endl;
+	
+	//元素删除
+	b.pop_back();//删除a的最后一个元素
+	b.erase(b.begin()+3);//删除第三个元素
+	//打印a数组
+	for(int q=0;q<9;q++)
+	cout<<b[q]<<" ";
+	cout<<endl;
+	
+	
+	 
+	return 0;
+}
